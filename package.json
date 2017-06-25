@@ -1,0 +1,27 @@
+{
+  "name": "falcor-data-route-builder",
+  "version": "1.0.0",
+  "description": "Falcor Data Route Builder",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stierma1/falcor-data-route-builder.git"
+  },
+  "author": "stierma1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stierma1/falcor-data-route-builder/issues"
+  },
+  "homepage": "https://github.com/stierma1/falcor-data-route-builder#readme",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "jison": "^0.4.17",
+    "mocha": "^3.4.2"
+  },
+  "jest": {
+    "testRegex": "(/tests/.*|\\.(test|spec))\\.(ts|tsx|js)$"
+  }
+}
