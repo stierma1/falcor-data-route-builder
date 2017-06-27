@@ -7,7 +7,7 @@ Most falcor routes can be broken up into 2 pieces, a data fetching piece and a d
 ```js
 var DataRouteBuilder = require("falcor-data-route-builder");
 var dataService = {
-  getData:function({rawDataRoute, route, params, resolve, reject}){
+  getData:function({rawDataRoute, route, params, requestContext, resolve, reject}){
     if(params["user"] === "me")
       resolve({my:{ message:"Hello World"}}) //return the document associated with the data route here
     else {
@@ -29,5 +29,5 @@ if the route is invoked with "me" as the user key then the message "Hello World"
 Returns a data route usable by falcor
 
 
-## DataService.getData({String::rawDataRoute, String[]::route, Map::params, PromiseResolve::resolve, PromiseReject::reject}) => undefined
-getData should invoke the resolve with a json object or reject if error
+## DataService.getData({String::rawDataRoute, String[]::route, Map::params, Object requestContext, PromiseResolve::resolve, PromiseReject::reject}) => undefined
+getData should invoke the resolve with a json object or reject if error, requestContext is pulled from the Router's this.requestContext property

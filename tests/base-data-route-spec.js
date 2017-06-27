@@ -6,7 +6,7 @@ var BaseDataRoute = require('../lib/base-data-route');
 describe("BaseRoute", () => {
   var dataService = {
     getData: function(x){
-      var {resolve} = x;
+      var {resolve, requestContext} = x;
       resolve(x);
       return x;
     }
@@ -84,7 +84,7 @@ describe("BaseRoute", () => {
   it("getDataRoute - get call 1", async () => {
     var falcorRoute = BaseDataRoute.getDataRoute({routeString:"this.is.a.route", dataString:"this.is.a", dataService, expires:-5});
     expect(falcorRoute.route).equals("this.is.a.route");
-    var results = await falcorRoute.get({});
+    var results = await falcorRoute.get.bind({requestContext:{"hello":"world"}})({});
     expect(results.length).equals(1);
     expect(results[0].path).deep.equals(["this", "is", "a", "route"]);
     expect(results[0].value.value).deep.equals(["this", "is", "a"]);

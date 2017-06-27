@@ -1,6 +1,6 @@
 {
   "name": "falcor-data-route-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Falcor Data Route Builder",
   "main": "index.js",
   "scripts": {
